@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import CardList from "./Components/CardList/CardList";
+import useSWR from "swr";
+import { GET_POKEMON, getPokemon } from "./Services/PokeService";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const { data, error } = useSWR(GET_POKEMON, (url) => getPokemon(url));
+    return (
+        <div>
+            <CardList data={data?.results} />
+        </div>
+    );
 }
 
 export default App;
