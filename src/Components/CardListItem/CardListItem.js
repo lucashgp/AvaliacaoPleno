@@ -1,9 +1,8 @@
-import { Card, Image } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import "./CardListItem.css";
 import { BiTrash } from "react-icons/bi";
 import { FiEdit2 } from "react-icons/fi";
 import { CgPokemon } from "react-icons/cg";
-import { ToastrContainer } from "react-toastr";
 
 const CardListItem = ({ data }) => {
     return (

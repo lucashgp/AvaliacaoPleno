@@ -1,7 +1,5 @@
 import CardListItem from "../CardListItem/CardListItem";
 import "./CardList.css";
-import React, { useState, useEffect } from "react";
-import _ from "lodash";
 
 const CardList = ({ data }) => {
     return (
